@@ -5,20 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomersComponent } from './customers/customers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MaterialModule } from './assets/libraries/material/material.module';
-// import { CustomDirectiveDirective } from './app/customers/custom-directive.directive';
+import { MaterialModule } from './assets/libraries/material/material.module';
+import { FormsModule } from '@angular/forms';
+import { SearchCustomerPipe } from './customers/search-customer.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersComponent,
-    CustomDirectiveDirective
+    SearchCustomerPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

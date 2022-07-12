@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
   isVisible = false;
+  searchField: string = '';
 
   constructor() { }
 

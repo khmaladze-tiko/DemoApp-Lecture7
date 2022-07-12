@@ -1,8 +1,17 @@
 <button mat-button color="primary" (click)="toggleCustomers()">Load Clients</button>
+
+<mat-form-field *ngIf="isVisible" class="example-full-width" appearance="fill">
+    <mat-label>Client Search</mat-label>
+    <input matInput [(ngModel)]="searchField" >
+</mat-form-field>
+
 <div *ngIf="isVisible">
     <h1>Clients List</h1>
     <mat-list>
-        <mat-list-item *ngFor="let customers of customerList; let i = index ">
+        <mat-list-item
+         *ngFor="
+         let customers of customerList | searchCustomer: searchField;
+         let i = index ">
             {{i + 1}}. {{customers.firstName}} {{customers.lastName}} is {{customers.age}}
         </mat-list-item>
     </mat-list>
