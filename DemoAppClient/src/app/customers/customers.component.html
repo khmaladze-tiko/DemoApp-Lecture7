@@ -1,0 +1,9 @@
+<button mat-button color="primary" (click)="toggleCustomers()">Load Clients</button>
+<div *ngIf="isVisible">
+    <h1>Clients List</h1>
+    <mat-list>
+        <mat-list-item *ngFor="let customers of customerList; let i = index ">
+            {{i + 1}}. {{customers.firstName}} {{customers.lastName}} is {{customers.age}}
+        </mat-list-item>
+    </mat-list>
+</div>
